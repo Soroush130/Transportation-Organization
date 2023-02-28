@@ -1,0 +1,600 @@
+{
+	"info": {
+		"_postman_id": "0f6bce31-b278-4374-a700-8acdd74f201e",
+		"name": "TransportProject",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Authenticated",
+			"item": [
+				{
+					"name": "Get Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone\":\"09031927528\",\r\n    \"password\":\"amir1381\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/token/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"token",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Refresh Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refresh\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoicmVmcmVzaCIsImV4cCI6MTY3Nzk5MTM3NiwiaWF0IjoxNjc3NTU5Mzc2LCJqdGkiOiI1YmMyMDMxZjM2NjE0ZjI3YjM1OTBlNjY2MDJmMDdjZCIsInVzZXJfaWQiOjF9.Rr89PTvCNw4t4K7WGEOHwUNE0jLCDAOVwjEZXPccomQ\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/token/refresh/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"token",
+								"refresh",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "List products",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc3NTYxNzcwLCJpYXQiOjE2Nzc1NTk5NzAsImp0aSI6ImMyYjdmNmIyYTVjNDQwNzA4OWMxMDM4MGVhYzFlY2IwIiwidXNlcl9pZCI6Mn0.ikmWrEnSwm6pH1n1zNomRG3dOfxSZRhWJYi5aFQXBzo",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": ""
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/product/products/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product",
+								"products",
+								""
+							],
+							"query": [
+								{
+									"key": "Auth",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "list products each company",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc3NDY4Mzk0LCJpYXQiOjE2Nzc0NjQxOTQsImp0aSI6ImQ3YmM0YTk4MTVlODQ4YjRiYTgyYmE4ZGZkZWUwZWJkIiwidXNlcl9pZCI6MX0.CldrvfMJA8OyRKA9JHRUqSH-H6IMmo8WphognlcMTak",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/product/products/product_list_each_company/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product",
+								"products",
+								"product_list_each_company",
+								""
+							],
+							"query": [
+								{
+									"key": "Auth",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "detail product",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc3NDc0NTk2LCJpYXQiOjE2Nzc0NzAzOTYsImp0aSI6IjczMDUyZDYxNTY0YjQ2ZTE5OGQ5MmRlOTQ3OTE0ZWEwIiwidXNlcl9pZCI6Mn0.blSAFWlZm-HVQ0cJHAuX56iwogDRD5t5IlxwygbbETo",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/product/products/1/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product",
+								"products",
+								"1",
+								""
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create product",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc3NTYxODIxLCJpYXQiOjE2Nzc1NjAwMjEsImp0aSI6Ijk3ZTlmYTRhOGVhZTRjY2I5MDJlZjFmODUxMTAxMWFlIiwidXNlcl9pZCI6MX0.J3os679za4QwaMkwVEoDpvHEEv05CMMxyejO6MOBzOc",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\":\"گوجه فرهنگی\",\r\n    \"amount\":\"50\",\r\n    \"postage_date\":\"2023-03-25\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/product/products/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product",
+								"products",
+								""
+							],
+							"query": [
+								{
+									"key": "Auth",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update product",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc3MzgzMjMzLCJpYXQiOjE2NzczNzkwMzMsImp0aSI6IjUwNDVkNThkYTZhNzQ0MzA5MzA4N2VmMmUyOGUxODUzIiwidXNlcl9pZCI6NX0.T9kDPHsbP_mHqQP4KSgUDu0ej0U9oeK2k8yawDigxHM",
+								"type": "default"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc3MzgzMDMyLCJpYXQiOjE2NzczNzg4MzIsImp0aSI6IjVkNGI4NTI0OTY0NzQyYjg5OWUzNmNkY2VkZDU4YTQyIiwidXNlcl9pZCI6MX0.BkKoNndasfon99HSug3eXhl41-i6ve0udqIOP8TCAFE",
+								"type": "default",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"amount\":\"50\",\r\n    \"postage_date\": \"2023-03-05\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/product/products/3/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product",
+								"products",
+								"3",
+								""
+							],
+							"query": [
+								{
+									"key": "Auth",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete product",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc3MzgzMjMzLCJpYXQiOjE2NzczNzkwMzMsImp0aSI6IjUwNDVkNThkYTZhNzQ0MzA5MzA4N2VmMmUyOGUxODUzIiwidXNlcl9pZCI6NX0.T9kDPHsbP_mHqQP4KSgUDu0ej0U9oeK2k8yawDigxHM",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/product/products/6/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product",
+								"products",
+								"6",
+								""
+							],
+							"query": [
+								{
+									"key": "Auth",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Account",
+			"item": [
+				{
+					"name": "Phone Login",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"phone\":\"09153357448\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/account/accounts/phone_login/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"account",
+								"accounts",
+								"phone_login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Validate Phone",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"otp_code\": \"20663\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/account/accounts/validate_phone/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"account",
+								"accounts",
+								"validate_phone",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Bar",
+			"item": [
+				{
+					"name": "Create Bar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc3NTYxNzcwLCJpYXQiOjE2Nzc1NTk5NzAsImp0aSI6ImMyYjdmNmIyYTVjNDQwNzA4OWMxMDM4MGVhYzFlY2IwIiwidXNlcl9pZCI6Mn0.ikmWrEnSwm6pH1n1zNomRG3dOfxSZRhWJYi5aFQXBzo",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"product\": 4,\r\n    \"driver\":4,\r\n    \"amount\":35\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/product/bars/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product",
+								"bars",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Confirmation Bar",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc3NTYxODIxLCJpYXQiOjE2Nzc1NjAwMjEsImp0aSI6Ijk3ZTlmYTRhOGVhZTRjY2I5MDJlZjFmODUxMTAxMWFlIiwidXNlcl9pZCI6MX0.J3os679za4QwaMkwVEoDpvHEEv05CMMxyejO6MOBzOc",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"barcode\": \"11537843506539723452\",\r\n    \"status\": \"valid\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/product/bars/bar_confirmation/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product",
+								"bars",
+								"bar_confirmation",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Bars Each Factory",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc3NTYxODIxLCJpYXQiOjE2Nzc1NjAwMjEsImp0aSI6Ijk3ZTlmYTRhOGVhZTRjY2I5MDJlZjFmODUxMTAxMWFlIiwidXNlcl9pZCI6MX0.J3os679za4QwaMkwVEoDpvHEEv05CMMxyejO6MOBzOc",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/product/bars/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product",
+								"bars",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List Bars Each Driver",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNjc3NTYyMDI4LCJpYXQiOjE2Nzc1NjAyMjgsImp0aSI6ImMwZmRlZTcyNzhmMzRkZmViNWI3NGRmNDU5ZDY3ZTIyIiwidXNlcl9pZCI6NH0.Cmx8_EGAvlkftClJ4EeDjfEL4QLtayi-aDYxUTzlcj4",
+								"type": "default"
+							}
+						],
+						"url": {
+							"raw": "http://127.0.0.1:8000/api/product/bars/list_bars_driver/",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"product",
+								"bars",
+								"list_bars_driver",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
